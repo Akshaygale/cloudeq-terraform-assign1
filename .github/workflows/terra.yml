@@ -1,7 +1,7 @@
 name: github actions with Terraform
 
 env:
-  working-directory: ./ag_module/example
+  my-directory: ./ag_module/example
 
 on:
   push:
@@ -29,28 +29,28 @@ jobs:
     - name: Terraform init
       id: init
       run: terraform init
-      working-directory: ${{env.working-directory}}
+      working-directory: ${{env.my-directory}}
 
     - name: Terraform Validate
       id: validate
       run: terraform validate
-      working-directory: ${{env.working-directory}}
+      working-directory: ${{env.my-directory}}
 
       
     - name: Terraform Plan
       id: plan
       run: terraform plan
-      working-directory: ${{env.working-directory}}
+      working-directory: ${{env.my-directory}}
 
-    - name: Terraform Apply
-      id: apply
-      run: terraform apply -auto-approve
-      working-directory: ${{env.working-directory}}
+    # - name: Terraform Apply
+    #   id: apply
+    #   run: terraform apply -auto-approve
+    #   working-directory: ${{env.my-directory}}
 
-    - name: Terraform destroy
-      id: destroy
-      run: terraform destroy -auto-approve
-      working-directory: ${{env.working-directory}}
+    # - name: Terraform destroy
+    #   id: destroy
+    #   run: terraform destroy -auto-approve
+    #   working-directory: ${{env.my-directory}}
 
 
 
