@@ -42,15 +42,15 @@ jobs:
       run: terraform plan
       working-directory: ${{env.my-directory}}
 
-    # - name: Terraform Apply
-    #   id: apply
-    #   run: terraform apply -auto-approve
-    #   working-directory: ${{env.my-directory}}
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply -auto-approve
+      working-directory: ${{env.my-directory}}
 
-    # - name: Terraform destroy
-    #   id: destroy
-    #   run: terraform destroy -auto-approve
-    #   working-directory: ${{env.my-directory}}
+    - name: Terraform destroy
+      id: destroy
+      run: terraform destroy -auto-approve
+      working-directory: ${{env.my-directory}}
 
 
 
