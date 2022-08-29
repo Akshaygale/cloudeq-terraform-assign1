@@ -7,6 +7,6 @@ variable "bucket_name" {
   type = string
 }
 
-variable "all_user" {
-  type = list(any)
-}
+# variable "all_user" {
+#   type = list(any)
+# }
