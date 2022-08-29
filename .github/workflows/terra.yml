@@ -31,7 +31,7 @@
 name: Github Actions to automate Terraform
 
 env:
-  working-directory: ./dummy_module/example
+  working-directory: ./ag_module/example
 
 on:
   push:
