@@ -67,19 +67,19 @@ jobs:
       working-directory: ${{env.working-directory}}
 
       
-    - name: Terraform Plan
-      id: plan
-      run: terraform plan
-      working-directory: ${{env.working-directory}}
+    # - name: Terraform Plan
+    #   id: plan
+    #   run: terraform plan
+    #   working-directory: ${{env.working-directory}}
 
 
-    - name: Terraform plan status
-      if: steps.plan.outcome == 'failure'
-      run: echo "Oops not done!"
+    # - name: Terraform plan status
+    #   if: steps.plan.outcome == 'failure'
+    #   run: echo "Oops not done!"
 
     - name: Terraform Apply
       id: apply
-      if: steps.plan.outcome != 'failure'
+      # if: steps.plan.outcome != 'failure'
       run: terraform apply -auto-approve
       working-directory: ${{env.working-directory}}
 
