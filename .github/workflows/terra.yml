@@ -1,4 +1,4 @@
-name: Github Actions with Terraform
+name: github actions with Terraform
 
 env:
   working-directory: ./ag_module/example
@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  automate_terraform_apply:
+  job1:
     runs-on: ubuntu-latest
 
     env:
