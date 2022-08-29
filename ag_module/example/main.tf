@@ -1,8 +1,8 @@
 
 module "aws_iam_users" {
   source         = "../../iam_user"
-  demo_group     = var.group_name
-  demo_usernames =  ["user1-Itachi", "user2-Obito", "user3-Naruto"] 
+  mydemo_group     = var.group_name
+  demo_usernames =  ["user10-Itachi", "user20-Obito", "user30-Naruto"] 
 }
 
 
