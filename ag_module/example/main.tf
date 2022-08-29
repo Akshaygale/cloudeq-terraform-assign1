@@ -1,14 +1,14 @@
 
 module "aws_iam_users" {
   source         = "../../iam_user"
-  demo_group     = "akshay-group"
-  demo_usernames = ["user1-Itachi", "user2-Obito", "user3-Naruto"]
+  demo_group     = var.group_name
+  demo_usernames = var.all_user /* ["user1-Itachi", "user2-Obito", "user3-Naruto"] */
 }
 
 
 module "my-bucket-module" { /* It create 1 to add */
   source      = "../../s3_bucket"
-  bucket_name =  "akshay-training-bucket"
+  bucket_name = var.bucket_name
 }
 
 module "my_aws_instance" { /* It create 2 to add */
