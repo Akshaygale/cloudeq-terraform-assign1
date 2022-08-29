@@ -19,6 +19,7 @@ resource "aws_iam_user" "demo_users" {
 
   tags = {
     Name = "akshay-demo-user"
+    
   }
 }
 
