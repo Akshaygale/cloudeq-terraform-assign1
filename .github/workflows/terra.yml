@@ -1,34 +1,4 @@
-# # GITHUB ACTION WITH THE TERRAFORM
-
-# name: github action by terraform
-
-# on:
-#   push:
-#     branches: [ "master" ]
-#   pull_request:
-#     branches: [ "master" ]
-
-#   workflow_dispatch:
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - uses: actions/checkout@v3
-
-#       - name: Run a one-line script
-#         run: echo Hello, world!
-
-#       - name: Run a multi-line script
-#         run: |
-#           echo Add other actions to build,
-#           echo test, and deploy your project.
-
-
-
-
-name: Github Actions to automate Terraform
+name: Github Actions with Terraform
 
 env:
   working-directory: ./ag_module/example
@@ -67,19 +37,19 @@ jobs:
       working-directory: ${{env.working-directory}}
 
       
-    # - name: Terraform Plan
-    #   id: plan
-    #   run: terraform plan
-    #   working-directory: ${{env.working-directory}}
+    - name: Terraform Plan
+      id: plan
+      run: terraform plan
+      working-directory: ${{env.working-directory}}
 
 
-    # - name: Terraform plan status
-    #   if: steps.plan.outcome == 'failure'
-    #   run: echo "Oops not done!"
+    - name: Terraform plan status
+      if: steps.plan.outcome == 'failure'
+      run: echo "Oops not done!"
 
     - name: Terraform Apply
       id: apply
-      # if: steps.plan.outcome != 'failure'
+      if: steps.plan.outcome != 'failure'
       run: terraform apply -auto-approve
       working-directory: ${{env.working-directory}}
 
@@ -87,10 +57,6 @@ jobs:
       id: destroy
       run: terraform destroy -auto-approve
       working-directory: ${{env.working-directory}}
-
-
-
-
 
 
 
