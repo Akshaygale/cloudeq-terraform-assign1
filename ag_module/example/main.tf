@@ -14,8 +14,6 @@ module "aws_iam_users" {
 module "my_aws_instance" { /* It create 2 to add */
   source    = "../../ec2"
   ami1      = "ami-090fa75af13c156b4"
- 
- 
   demo_size = 10
 }
 
